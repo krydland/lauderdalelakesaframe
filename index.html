@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woodland A‑Frame Retreat</title>
+
+<style>
+:root{
+    --forest:#184136;
+    --forest-light:#285e50;
+    --accent:#c26a44;
+    --cream:#f8f5ef;
+    --text:#24312d;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.6;
+}
+
+.hero{
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+              linear-gradient(135deg,#315f52,#17352d);
+    color:white;
+    padding:120px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:0 auto 20px;
+    font-size:1.2rem;
+}
+
+.email-link{
+    color:#fff;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    margin-top:15px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-bottom:50px;
+}
+
+.stat{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:12px;
+}
+
+.stat h3{
+    color:var(--forest);
+    font-size:2rem;
+}
+
+.section{
+    margin-bottom:60px;
+}
+
+.section h2{
+    color:var(--forest);
+    margin-bottom:20px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.feature{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+}
+
+.booking-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.booking-card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+}
+
+.calendar-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.calendar-header button{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.weekdays,
+.calendar{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:5px;
+}
+
+.weekdays div{
+    text-align:center;
+    font-size:.8rem;
+    font-weight:bold;
+    color:#666;
+}
+
+.day{
+    aspect-ratio:1;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#eef2ef;
+}
+
+.day.selected{
+    background:var(--accent);
+    color:white;
+}
+
+.day.range{
+    background:#f0d5ca;
+}
+
+.day:disabled{
+    opacity:.35;
+}
+
+form{
+    display:grid;
+    gap:12px;
+}
+
+input,
+select,
+textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    width:100%;
+}
+
+textarea{
+    min-height:100px;
+}
+
+.submit-btn{
+    background:var(--accent);
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+#status{
+    display:none;
+    background:#e8f4ec;
+    padding:12px;
+    border-radius:8px;
+}
+
+footer{
+    background:var(--forest);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+@media(max-width:800px){
+    .booking-layout{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+    <h1>Woodland A‑Frame Retreat</h1>
+
+    <p>
+        A classic A‑frame getaway on 2.46 wooded acres with water access,
+        comfortable indoor living spaces, and amenities designed for a relaxing stay.
+    </p>
+
+    <p>
+        Contact:
+        <a class="email-link"
+           href="mailto:lauderdalelakesaframe@gmail.com">
+           lauderdalelakesaframe@gmail.com
+        </a>
+    </p>
+
+    #bookingCheck Availability</a>
+</header>
+
+<div class="container">
+
+    <section class="stats">
+        <div class="stat">
+            <h3>1</h3>
+            <p>Bedroom</p>
+        </div>
+
+        <div class="stat">
+            <h3>2</h3>
+            <p>Bathrooms</p>
+        </div>
+
+        <div class="stat">
+            <h3>2.46</h3>
+            <p>Wooded Acres</p>
+        </div>
+
+        <div class="stat">
+            <h3>Water</h3>
+            <p>Access Rights</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>The Retreat</h2>
+
+        <div class="features">
+            <div class="feature">
+                <h3>A‑Frame Design</h3>
+                <p>Distinctive architecture and cozy atmosphere.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Walk‑Out Lower Level</h3>
+                <p>Additional living space with convenient exterior access.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Climate Controlled</h3>
+                <p>Central air and forced-air heating.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Private Woodland Setting</h3>
+                <p>Surrounded by mature trees and natural scenery.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Full Kitchen</h3>
+                <p>Kitchen and dining area for extended stays.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Laundry</h3>
+                <p>Washer and dryer available.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Guest Amenities</h2>
+
+        <div class="features">
+            <div class="feature">Community Pool</div>
+            <div class="feature">Park Area</div>
+            <div class="feature">Picnic Area</div>
+            <div class="feature">Day Pier Access</div>
+            <div class="feature">Water Access Rights</div>
+            <div class="feature">Wooded Grounds</div>
+        </div>
+    </section>
+
+    <section id="booking" class="section">
+        <div class="booking-layout">
+
+            <div>
+                <h2>Book Your Stay</h2>
+
+                <p>
+                    Select check-in and check-out dates, then submit
+                    your booking request.
+                </p>
+
+                <p style="margin-top:15px;">
+                    Questions?
+                    <br>
+                    <a href="mailto:lauderdalelakesaframe@gmail.com">
+                        lauderdalelakesaframe@gmail.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="booking-card">
+
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h3 id="monthLabel"></h3>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+
+                <div id="calendar" class="calendar"></div>
+
+                <p id="dateSummary" style="margin:20px 0;">
+                    Select check‑in date.
+                </p>
+
+                <form id="bookingForm">
+                    <input required placeholder="Full Name">
+                    <input type="email" required placeholder="Email">
+                    <input placeholder="Phone Number">
+
+                    <select required>
+                        <option value="">Guests</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4+</option>
+                    </select>
+
+                    <textarea placeholder="Message"></textarea>
+
+                    <div id="status"></div>
+
+                    <button class="submit-btn" type="submit">
+                        Request Booking
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p><strong>Woodland A‑Frame Retreat</strong></p>
+    <p>
+        Contact:
+        <a style="color:white"
+           href="mailto:lauderdalelakesaframe@gmail.com">
+           lauderdalelakesaframe@gmail.com
+        </a>
+    </p>
+    <p>Exact location provided only after booking confirmation.</p>
+</footer>
+
+<script>
+const calendar = document.getElementById('calendar');
+const monthLabel = document.getElementById('monthLabel');
+const dateSummary = document.getElementById('dateSummary');
+
+let currentDate = new Date();
+let checkIn = null;
+let checkOut = null;
+
+function formatDate(date) {
+    return date.toLocaleDateString();
+}
+
+function renderCalendar() {
+
+    calendar.innerHTML = "";
+
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+
+    monthLabel.textContent =
+        new Intl.DateTimeFormat('en-US',
+        { month: 'long', year: 'numeric' })
+        .format(currentDate);
+
+    const firstDay =
+        new Date(year, month, 1).getDay();
+
+    const totalDays =
+        new Date(year, month + 1, 0).getDate();
+
+    for(let i = 0; i < firstDay; i++) {
+        calendar.appendChild(document.createElement('div'));
+    }
+
+    for(let day = 1; day <= totalDays; day++) {
+
+        const btn = document.createElement('button');
+        btn.className = 'day';
+        btn.textContent = day;
+
+        const date =
+            new Date(year, month, day);
+
+        btn.onclick = () => {
+
+            if(!checkIn || checkOut){
+                checkIn = date;
+                checkOut = null;
+            } else if(date > checkIn){
+                checkOut = date;
+            }
+
+            if(checkIn && checkOut){
+                const nights =
+                    Math.round((checkOut - checkIn)/86400000);
+
+                dateSummary.innerHTML =
+                    `${formatDate(checkIn)} → ${formatDate(checkOut)}
+                     (${nights} nights)`;
+            } else {
+                dateSummary.innerHTML =
+                    `Check‑in: ${formatDate(checkIn)}`;
+            }
+
+            renderCalendar();
+        };
+
+        if(checkIn &&
+           date.toDateString() === checkIn.toDateString())
+            btn.classList.add('selected');
+
+        if(checkOut &&
+           date.toDateString() === checkOut.toDateString())
+            btn.classList.add('selected');
+
+        if(checkIn && checkOut &&
+           date > checkIn && date < checkOut)
+            btn.classList.add('range');
+
+        calendar.appendChild(btn);
+    }
+}
+
+document.getElementById('prevMonth')
+.addEventListener('click',()=>{
+    currentDate =
+        new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth()-1,
+            1
+        );
+    renderCalendar();
+});
+
+document.getElementById('nextMonth')
+.addEventListener('click',()=>{
+    currentDate =
+        new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth()+1,
+            1
+        );
+    renderCalendar();
+});
+
+document.getElementById('bookingForm')
+.addEventListener('submit',(e)=>{
+    e.preventDefault();
+
+    const status =
+        document.getElementById('status');
+
+    status.style.display='block';
+
+    status.innerHTML =
+      'Booking request recorded. Please email ' +
+      'lauderdalelakesaframe@gmail.com ' +
+      'for confirmation.';
+});
+
+renderCalendar();
+</script>
+
+</body>
+</html>
